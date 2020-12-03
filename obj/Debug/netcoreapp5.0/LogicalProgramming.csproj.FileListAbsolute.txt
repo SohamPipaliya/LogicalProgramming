@@ -1,0 +1,16 @@
+C:\Users\SOHAM\Desktop\LogicalProgramming\LogicalProgramming\bin\Debug\netcoreapp5.0\LogicalProgramming.exe
+C:\Users\SOHAM\Desktop\LogicalProgramming\LogicalProgramming\bin\Debug\netcoreapp5.0\LogicalProgramming.deps.json
+C:\Users\SOHAM\Desktop\LogicalProgramming\LogicalProgramming\bin\Debug\netcoreapp5.0\LogicalProgramming.runtimeconfig.json
+C:\Users\SOHAM\Desktop\LogicalProgramming\LogicalProgramming\bin\Debug\netcoreapp5.0\LogicalProgramming.runtimeconfig.dev.json
+C:\Users\SOHAM\Desktop\LogicalProgramming\LogicalProgramming\bin\Debug\netcoreapp5.0\LogicalProgramming.dll
+C:\Users\SOHAM\Desktop\LogicalProgramming\LogicalProgramming\bin\Debug\netcoreapp5.0\ref\LogicalProgramming.dll
+C:\Users\SOHAM\Desktop\LogicalProgramming\LogicalProgramming\bin\Debug\netcoreapp5.0\LogicalProgramming.pdb
+C:\Users\SOHAM\Desktop\LogicalProgramming\LogicalProgramming\obj\Debug\netcoreapp5.0\LogicalProgramming.csprojAssemblyReference.cache
+C:\Users\SOHAM\Desktop\LogicalProgramming\LogicalProgramming\obj\Debug\netcoreapp5.0\LogicalProgramming.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SOHAM\Desktop\LogicalProgramming\LogicalProgramming\obj\Debug\netcoreapp5.0\LogicalProgramming.AssemblyInfoInputs.cache
+C:\Users\SOHAM\Desktop\LogicalProgramming\LogicalProgramming\obj\Debug\netcoreapp5.0\LogicalProgramming.AssemblyInfo.cs
+C:\Users\SOHAM\Desktop\LogicalProgramming\LogicalProgramming\obj\Debug\netcoreapp5.0\LogicalProgramming.csproj.CoreCompileInputs.cache
+C:\Users\SOHAM\Desktop\LogicalProgramming\LogicalProgramming\obj\Debug\netcoreapp5.0\LogicalProgramming.dll
+C:\Users\SOHAM\Desktop\LogicalProgramming\LogicalProgramming\obj\Debug\netcoreapp5.0\ref\LogicalProgramming.dll
+C:\Users\SOHAM\Desktop\LogicalProgramming\LogicalProgramming\obj\Debug\netcoreapp5.0\LogicalProgramming.pdb
+C:\Users\SOHAM\Desktop\LogicalProgramming\LogicalProgramming\obj\Debug\netcoreapp5.0\LogicalProgramming.genruntimeconfig.cache
