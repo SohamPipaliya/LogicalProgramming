@@ -29,7 +29,7 @@ namespace Logical
             //PyramidReverseABCDWithRecursion(50);
             //GeneralReverseABCDWithRecursion(10);
             //Console.WriteLine(GeneralReverseABCDWithRecursionWithReturn(10));
-
+            FindAllPermutation("123");
             Console.ReadLine();
             goto here;
         }
@@ -345,6 +345,32 @@ namespace Logical
                 }
             }
             return sb.ToString();
+        }
+
+        static void FindAllPermutation(string str)
+        {
+            permute(str, str.Length);
+
+            void permute(string str, int r, int l = 0)
+            {
+                if (l == r)
+                    Console.WriteLine(str);
+                else
+                {
+                    for (int i = l; i < r; i++)
+                    {
+                        str = swap(str, i, l);
+                        permute(str, r, l + 1);
+                        str = swap(str, i, l);
+                    }
+                }
+            }
+            string swap(string str, int i, int j)
+            {
+                var charArray = str.ToCharArray();
+                (charArray[i], charArray[j]) = (charArray[j], charArray[i]);
+                return new string(charArray);
+            }
         }
     }
 }
