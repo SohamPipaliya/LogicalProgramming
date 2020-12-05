@@ -1,36 +1,61 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using static System.Console;
 
-namespace Logical
+namespace LogicalProgramming
 {
     public static class Program
     {
         static void Main(string[] args)
         {
         here:
-            Console.WriteLine(ReverseDigitWithReturn(123, 2));
-            ReverseDigitWithRecursion(123, 2);
-            Console.WriteLine(FindSubStringWithRecursion("abcd"));
-            Console.WriteLine(RemoveCharacter("abcd", 'a'));
-            Console.WriteLine(RemoveCharacterOneTime("aaabcd", 'a'));
-            Console.WriteLine(letCharacterOneTime("aaaaabcd", 'a'));
-            Console.WriteLine(CheckStringPalindrome("abc"));
-            Console.WriteLine(CheckStringPalindromeWithRecursion("abcba"));
-            Console.WriteLine(FindPositions(new int[] { 1, 2, 3, 4, 8, 5, 6, 7, 8, -80 }, -80));
+            //WriteLine(ReverseDigitWithReturn(123, 2));
+            //ReverseDigitWithRecursion(123, 2);
+            //WriteLine(FindSubStringWithRecursion("abcd"));
+            //WriteLine(RemoveCharacter("abcd", 'a'));
+            //WriteLine(RemoveCharacterOneTime("aaabcd", 'a'));
+            //WriteLine(letCharacterOneTime("aaaaabcd", 'a'));
+            //WriteLine(CheckStringPalindrome("abc"));
+            //WriteLine(CheckStringPalindromeWithRecursion("abcba"));
+            //WriteLine(FindPositions(new int[] { 1, 2, 3, 4, 8, 5, 6, 7, 8, -80 }, -80));
             //Pyramid(10);
             //PyramidABCD(10);
-            //PyramidWithRecursion(50);
-            //PyramidReverseABCD(100);
+            //PyramidWithRecursion(10);
+            //PyramidReverseABCD(10);
             //GeneralABCD(10);
             //GeneralReverseABCD(10);
             //PyramidWithRecursion(10);
-            //Console.WriteLine(PyramidWithRecursionWithReturn(10));
-            //PyramidReverseABCDWithRecursion(50);
+            //WriteLine(PyramidWithRecursionWithReturn(10));
+            //PyramidReverseABCDWithRecursion(10);
             //GeneralReverseABCDWithRecursion(10);
-            //Console.WriteLine(GeneralReverseABCDWithRecursionWithReturn(10));
-            FindAllPermutation("123");
-            Console.ReadLine();
+            //WriteLine(GeneralReverseABCDWithRecursionWithReturn(10));
+            //FindAllPermutation("123");
+            //foreach (var item in Split("soham patel pipaliya tulshinhai"))
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine(Power(5, 5));
+            //foreach (var item in LeftCircularRotaion(new int[] { 10, 20, 30, 40, 50 }))
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //foreach (var item in RightCircularRotation(new int[] { 10, 20, 30, 40, 50 }))
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Fibonanci();
+            //FibonanciWithRecursion();
+            //NthFibonanci(10);
+            //NthFibonanciWithRecursion(10);
+            //FibonanciUptoNumber(10000);
+            //FibonanciUptoNumberWithRecursion(10000);
+            //Console.WriteLine(IsPrime(10));
+            //PrintPrimeUptoN(0, 100);
+            //Console.WriteLine(IsArmstrong(8208));
+            ArmstrongUptoN(1, 10000);
+
+            ReadLine();
             goto here;
         }
 
@@ -38,7 +63,7 @@ namespace Logical
         {
             str += arg.ToString()[index];
             if (index > 0) ReverseDigitWithRecursion(arg, index - 1, str);
-            else Console.WriteLine(str);
+            else WriteLine(str);
         }
 
         static int ReverseDigitWithReturn(int arg, int index)
@@ -148,9 +173,9 @@ namespace Logical
             int i, j;
             for (i = 0; i < n; i++)
             {
-                for (j = 0; j < n - i; j++) Console.Write(" ");
-                for (j = 0; j <= 2 * i; j++) Console.Write("*");
-                Console.WriteLine();
+                for (j = 0; j < n - i; j++) Write(" ");
+                for (j = 0; j <= 2 * i; j++) Write("*");
+                WriteLine();
             }
         }
 
@@ -160,19 +185,19 @@ namespace Logical
             {
                 if (++j >= 0 && j < n - i)
                 {
-                    Console.Write(" ");
+                    Write(" ");
                     PyramidWithRecursion(n, i, j);
                 }
                 else
                 {
                     if (++s >= 0 && s <= 2 * i)
                     {
-                        Console.Write("*");
+                        Write("*");
                         PyramidWithRecursion(n, i, j: j, s: s);
                     }
                     else
                     {
-                        Console.WriteLine();
+                        WriteLine();
                         PyramidWithRecursion(n, ++i);
                     }
                 }
@@ -212,9 +237,9 @@ namespace Logical
             for (i = 0; i < n; i++)
             {
                 ch = 'A';
-                for (j = 0; j < n - i; j++) Console.Write(" ");
-                for (j = 0; j <= 2 * i; j++) Console.Write(ch++);
-                Console.WriteLine();
+                for (j = 0; j < n - i; j++) Write(" ");
+                for (j = 0; j <= 2 * i; j++) Write(ch++);
+                WriteLine();
             }
         }
 
@@ -225,11 +250,11 @@ namespace Logical
             for (i = 0; i < n; i++)
             {
                 ch = 'A';
-                for (j = 0; j < n - i; j++) Console.Write(" ");
-                for (j = 0; j <= i; j++) Console.Write(ch++);
+                for (j = 0; j < n - i; j++) Write(" ");
+                for (j = 0; j <= i; j++) Write(ch++);
                 ch--;
-                for (j = 0; j < i; j++) Console.Write(--ch);
-                Console.WriteLine();
+                for (j = 0; j < i; j++) Write(--ch);
+                WriteLine();
             }
         }
 
@@ -239,7 +264,7 @@ namespace Logical
             {
                 if (++j >= 0 && j < n - i)
                 {
-                    Console.Write(" ");
+                    Write(" ");
                     PyramidReverseABCDWithRecursion(n, i: i, j: j);
                 }
                 else
@@ -259,7 +284,7 @@ namespace Logical
                         }
                         else
                         {
-                            Console.WriteLine();
+                            WriteLine();
                             PyramidReverseABCDWithRecursion(n, i: ++i);
                         }
                     }
@@ -273,9 +298,9 @@ namespace Logical
             int i, j;
             for (i = 0; i < n; i++)
             {
-                for (j = 0; j <= 2 * i; j++) Console.Write(ch++);
+                for (j = 0; j <= 2 * i; j++) Write(ch++);
                 ch = 'A';
-                Console.WriteLine();
+                WriteLine();
             }
         }
 
@@ -286,10 +311,10 @@ namespace Logical
             for (i = 0; i < n; i++)
             {
                 ch = 'A';
-                for (j = 0; j <= i; j++) Console.Write(ch++);
+                for (j = 0; j <= i; j++) Write(ch++);
                 ch--;
-                for (j = 0; j < i; j++) Console.Write(--ch);
-                Console.WriteLine();
+                for (j = 0; j < i; j++) Write(--ch);
+                WriteLine();
             }
         }
 
@@ -299,7 +324,7 @@ namespace Logical
             {
                 if (++j >= 0 && j <= i)
                 {
-                    Console.Write(ch++);
+                    Write(ch++);
                     GeneralReverseABCDWithRecursion(n, i: i, j: j, ch: ch);
                 }
                 else
@@ -312,7 +337,7 @@ namespace Logical
                     }
                     else
                     {
-                        Console.WriteLine();
+                        WriteLine();
                         GeneralReverseABCDWithRecursion(n, i: ++i);
                     }
                 }
@@ -347,21 +372,21 @@ namespace Logical
             return sb.ToString();
         }
 
-        static void FindAllPermutation(string str)
+        static void FindAllPermutation(string str)// X
         {
             permute(str, str.Length);
 
-            void permute(string str, int r, int l = 0)
+            void permute(string str, int right, int left = 0)
             {
-                if (l == r)
-                    Console.WriteLine(str);
+                if (left == right)
+                    WriteLine(str);
                 else
                 {
-                    for (int i = l; i < r; i++)
+                    for (int i = left; i < right; i++)
                     {
-                        str = swap(str, i, l);
-                        permute(str, r, l + 1);
-                        str = swap(str, i, l);
+                        str = swap(str, i, left);
+                        permute(str, right, left + 1);
+                        str = swap(str, i, left);
                     }
                 }
             }
@@ -370,6 +395,159 @@ namespace Logical
                 var charArray = str.ToCharArray();
                 (charArray[i], charArray[j]) = (charArray[j], charArray[i]);
                 return new string(charArray);
+            }
+        }
+
+        static string FindLongestPalindrome(string str)// X
+        {
+            var maxPalindrome = "";
+            return maxPalindrome;
+        }
+
+        static string[] Split(string str, char ch = ' ')
+        {
+            StringBuilder sb = new StringBuilder();
+            List<string> list = new List<string>();
+            foreach (var item in str)
+            {
+                if (item != ch) sb.Append(item);
+                else
+                {
+                    list.Add(sb.ToString());
+                    sb.Clear();
+                }
+            }
+            return list.ToArray();
+        }
+
+        static long Power(int n, int t)
+        {
+            if (t == 1) return n;
+            else if (t == 0) return 1;
+            else return n * Power(n, t - 1);
+        }
+
+        static int[] LeftCircularRotaion(int[] arr)
+        {
+            var j = arr[0];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i == arr.Length - 1) arr[i] = j;
+                else (arr[i], arr[i + 1]) = (arr[i + 1], arr[i]); // Swapp values
+            }
+            return arr;
+        }
+
+        static int[] RightCircularRotation(int[] arr)
+        {
+            var temp = arr[arr.Length - 1];
+            for (int i = arr.Length - 1; i >= 0; i--)
+            {
+                if (i == 0) arr[i] = temp;
+                else (arr[i], arr[i - 1]) = (arr[i - 1], arr[i]); // Swapp values
+            }
+            return arr;
+        }
+
+        static void Fibonanci()
+        {
+            int x = 0, y = 1, z = 1;
+            Console.WriteLine(x);
+            Console.WriteLine(y);
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(z);
+                z = x + y;
+                x = y;
+                y = z;
+            }
+        }
+
+        static void FibonanciWithRecursion(int i = 0, int x = 0, int y = 1)
+        {
+            if (i != 10)
+            {
+                Console.WriteLine(x);
+                Console.WriteLine(y);
+                FibonanciWithRecursion(i: ++i, x: x += y, y: y += x);
+            }
+        }
+
+        static int NthFibonanci(int n)
+        {
+            if (n == 0 || n == 1) return n;
+            int x = 0, y = 1, z = 1;
+            for (int i = 2; i <= n; i++)
+            {
+                z = x + y;
+                x = y;
+                y = z;
+            }
+            return z;
+        }
+
+        static int NthFibonanciWithRecursion(int n)
+        {
+            if (n == 0 || n == 1) return n;
+            else return NthFibonanciWithRecursion(n - 1) + NthFibonanciWithRecursion(n - 2);
+        }
+
+        static void FibonanciUptoN(int n)
+        {
+            int x = 0, y = 1, z = x + y;
+            for (int i = 0; z < n; i++)
+            {
+                Console.WriteLine(z);
+                z = x + y;
+                x = y;
+                y = z;
+            }
+        }
+
+        static void FibonanciUptoNWithRecursion(int n, int x = 0, int y = 1, int z = 1)
+        {
+            if (z < n)
+            {
+                Console.WriteLine(z);
+                FibonanciUptoNWithRecursion(n, z: z = x + y, x: x = y, y: y = z);
+            }
+        }
+
+        static bool IsPrime(int n)
+        {
+            for (int i = 2; i <= n / 2; i++)
+            {
+                if (n % i == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        static void PrintPrimeUptoN(int start, int n)
+        {
+            for (start = start; start <= n; start++) if (IsPrime(start)) Console.WriteLine(start);
+        }
+
+        static bool IsArmstrong(int n)
+        {
+            int tempn = n, sum = 0, count = n.ToString().Length;
+            while (tempn > 0)
+            {
+                int temp = tempn % 10;
+                sum += (int)Power(temp, count);
+                tempn = tempn / 10;
+            }
+            return sum == n;
+        }
+
+        static void ArmstrongUptoN(int start, int n)
+        {
+            while (start <= n)
+            {
+                if (IsArmstrong(start)) Console.WriteLine(start);
+                start++;
             }
         }
     }
