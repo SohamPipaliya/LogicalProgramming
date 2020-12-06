@@ -12,7 +12,8 @@ namespace LogicalProgramming
         here:
             //WriteLine(ReverseDigitWithReturn(123, 2));
             //ReverseDigitWithRecursion(123, 2);
-            //WriteLine(FindSubStringWithRecursion("abcd"));
+            //WriteLine(FindSubstring("abcdefghijklmnopqrstuvwxyz"));
+            //WriteLine(FindSubStringWithRecursion("abcdefghijklmnopqrstuvwxyz"));
             //WriteLine(RemoveCharacter("abcd", 'a'));
             //WriteLine(RemoveCharacterOneTime("aaabcd", 'a'));
             //WriteLine(letCharacterOneTime("aaaaabcd", 'a'));
@@ -76,6 +77,20 @@ namespace LogicalProgramming
         {
             if (index > 0) return Int32.Parse(arg.ToString()[index] + ReverseDigitWithReturn(arg, --index).ToString());
             else return Int32.Parse(arg.ToString()[0].ToString());
+        }
+
+        static string FindSubstring(string str)
+        {
+            var strToReturn = "";
+            for (int i = 0; i < str.Length; i++)
+            {
+                for (int j = i; j < str.Length; j++)
+                {
+                    strToReturn += str[j];
+                }
+                if (i != str.Length - 1) strToReturn += ',';
+            }
+            return strToReturn;
         }
 
         static string FindSubStringWithRecursion(string str, int i = 0, int j = 1, string final = "", bool check = true)
