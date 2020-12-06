@@ -53,8 +53,14 @@ namespace LogicalProgramming
             //Console.WriteLine(IsPrime(10));
             //PrintPrimeUptoN(0, 100);
             //Console.WriteLine(IsArmstrong(8208));
-            ArmstrongUptoN(1, 10000);
-
+            //ArmstrongUptoN(1, 10000);
+            //Console.WriteLine(ReversenNumber(123));
+            //Console.WriteLine(ReverseNumberWithRecursion(123));
+            //Console.WriteLine(Factorial(5));
+            //Console.WriteLine(FactorialWithRecursion(5));
+            //System.Console.WriteLine(SumOfNumber(12345));
+            //WriteLine(DecimalToBinary(84));
+            //WriteLine(BinaryToDecimal(1010100));
             ReadLine();
             goto here;
         }
@@ -168,89 +174,89 @@ namespace LogicalProgramming
             return (firstPosition, lastPosition);
         }
 
-        static void Pyramid(int n)
+        static void Pyramid(int number)
         {
             int i, j;
-            for (i = 0; i < n; i++)
+            for (i = 0; i < number; i++)
             {
-                for (j = 0; j < n - i; j++) Write(" ");
+                for (j = 0; j < number - i; j++) Write(" ");
                 for (j = 0; j <= 2 * i; j++) Write("*");
                 WriteLine();
             }
         }
 
-        static void PyramidWithRecursion(int n, int i = 0, int j = -1, int s = -1)
+        static void PyramidWithRecursion(int number, int i = 0, int j = -1, int s = -1)
         {
-            if (i >= 0 && i < n)
+            if (i >= 0 && i < number)
             {
-                if (++j >= 0 && j < n - i)
+                if (++j >= 0 && j < number - i)
                 {
                     Write(" ");
-                    PyramidWithRecursion(n, i, j);
+                    PyramidWithRecursion(number, i, j);
                 }
                 else
                 {
                     if (++s >= 0 && s <= 2 * i)
                     {
                         Write("*");
-                        PyramidWithRecursion(n, i, j: j, s: s);
+                        PyramidWithRecursion(number, i, j: j, s: s);
                     }
                     else
                     {
                         WriteLine();
-                        PyramidWithRecursion(n, ++i);
+                        PyramidWithRecursion(number, ++i);
                     }
                 }
             }
         }
 
-        static string PyramidWithRecursionWithReturn(int n, int i = 0, int j = -1, int s = -1, string final = "")
+        static string PyramidWithRecursionWithReturn(int number, int i = 0, int j = -1, int s = -1, string final = "")
         {
-            if (i >= 0 && i < n)
+            if (i >= 0 && i < number)
             {
-                if (++j >= 0 && j < n - i)
+                if (++j >= 0 && j < number - i)
                 {
                     final += " ";
-                    return PyramidWithRecursionWithReturn(n, i, j, final: final);
+                    return PyramidWithRecursionWithReturn(number, i, j, final: final);
                 }
                 else
                 {
                     if (++s >= 0 && s <= 2 * i)
                     {
                         final += "*";
-                        return PyramidWithRecursionWithReturn(n, i, j: j, s: s, final: final);
+                        return PyramidWithRecursionWithReturn(number, i, j: j, s: s, final: final);
                     }
                     else
                     {
                         final += "\n";
-                        return PyramidWithRecursionWithReturn(n, ++i, final: final);
+                        return PyramidWithRecursionWithReturn(number, ++i, final: final);
                     }
                 }
             }
             return final;
         }
 
-        static void PyramidABCD(int n)
+        static void PyramidABCD(int number)
         {
             char ch;
             int i, j;
-            for (i = 0; i < n; i++)
+            for (i = 0; i < number; i++)
             {
                 ch = 'A';
-                for (j = 0; j < n - i; j++) Write(" ");
+                for (j = 0; j < number - i; j++) Write(" ");
                 for (j = 0; j <= 2 * i; j++) Write(ch++);
                 WriteLine();
             }
         }
 
-        static void PyramidReverseABCD(int n)
+        static void PyramidReverseABCD(int number)
         {
             char ch;
             int i, j;
-            for (i = 0; i < n; i++)
+            for (i = 0; i < number; i++)
             {
                 ch = 'A';
-                for (j = 0; j < n - i; j++) Write(" ");
+                for (j = 0; j < number - i; j++) Write(" ");
                 for (j = 0; j <= i; j++) Write(ch++);
                 ch--;
                 for (j = 0; j < i; j++) Write(--ch);
@@ -258,21 +264,21 @@ namespace LogicalProgramming
             }
         }
 
-        static void PyramidReverseABCDWithRecursion(int n, int i = 0, int j = -1, int s = -1, int p = -1, char ch = 'A', bool check = true)
+        static void PyramidReverseABCDWithRecursion(int number, int i = 0, int j = -1, int s = -1, int p = -1, char ch = 'A', bool check = true)
         {
-            if (i >= 0 && i < n)
+            if (i >= 0 && i < number)
             {
-                if (++j >= 0 && j < n - i)
+                if (++j >= 0 && j < number - i)
                 {
                     Write(" ");
-                    PyramidReverseABCDWithRecursion(n, i: i, j: j);
+                    PyramidReverseABCDWithRecursion(number, i: i, j: j);
                 }
                 else
                 {
                     if (++s >= 0 && s <= i)
                     {
                         Write(ch++);
-                        PyramidReverseABCDWithRecursion(n, i: i, j: j, s: s, ch: ch);
+                        PyramidReverseABCDWithRecursion(number, i: i, j: j, s: s, ch: ch);
                     }
                     else
                     {
@@ -280,23 +286,23 @@ namespace LogicalProgramming
                         {
                             if (check) ch--;
                             Write(--ch);
-                            PyramidReverseABCDWithRecursion(n, i: i, j: j, s: s, p: p, ch: ch, check: false);
+                            PyramidReverseABCDWithRecursion(number, i: i, j: j, s: s, p: p, ch: ch, check: false);
                         }
                         else
                         {
                             WriteLine();
-                            PyramidReverseABCDWithRecursion(n, i: ++i);
+                            PyramidReverseABCDWithRecursion(number, i: ++i);
                         }
                     }
                 }
             }
         }
 
-        static void GeneralABCD(int n)
+        static void GeneralABCD(int number)
         {
             char ch = 'A';
             int i, j;
-            for (i = 0; i < n; i++)
+            for (i = 0; i < number; i++)
             {
                 for (j = 0; j <= 2 * i; j++) Write(ch++);
                 ch = 'A';
@@ -304,11 +310,11 @@ namespace LogicalProgramming
             }
         }
 
-        static void GeneralReverseABCD(int n)
+        static void GeneralReverseABCD(int number)
         {
             char ch;
             int i, j;
-            for (i = 0; i < n; i++)
+            for (i = 0; i < number; i++)
             {
                 ch = 'A';
                 for (j = 0; j <= i; j++) Write(ch++);
@@ -318,14 +324,14 @@ namespace LogicalProgramming
             }
         }
 
-        static void GeneralReverseABCDWithRecursion(int n, int i = 0, int j = -1, int s = -1, char ch = 'A', bool check = true)
+        static void GeneralReverseABCDWithRecursion(int number, int i = 0, int j = -1, int s = -1, char ch = 'A', bool check = true)
         {
-            if (i >= 0 && i < n)
+            if (i >= 0 && i < number)
             {
                 if (++j >= 0 && j <= i)
                 {
                     Write(ch++);
-                    GeneralReverseABCDWithRecursion(n, i: i, j: j, ch: ch);
+                    GeneralReverseABCDWithRecursion(number, i: i, j: j, ch: ch);
                 }
                 else
                 {
@@ -333,26 +339,26 @@ namespace LogicalProgramming
                     {
                         if (check) ch--;
                         Write(--ch);
-                        GeneralReverseABCDWithRecursion(n, i: i, j: j, s: s, ch: ch, check: false);
+                        GeneralReverseABCDWithRecursion(number, i: i, j: j, s: s, ch: ch, check: false);
                     }
                     else
                     {
                         WriteLine();
-                        GeneralReverseABCDWithRecursion(n, i: ++i);
+                        GeneralReverseABCDWithRecursion(number, i: ++i);
                     }
                 }
             }
         }
 
-        static string GeneralReverseABCDWithRecursionWithReturn(int n, StringBuilder sb = null, int i = 0, int j = -1, int s = -1, char ch = 'A', bool check = true)
+        static string GeneralReverseABCDWithRecursionWithReturn(int number, StringBuilder sb = null, int i = 0, int j = -1, int s = -1, char ch = 'A', bool check = true)
         {
             sb = sb ?? new StringBuilder();
-            if (i >= 0 && i < n)
+            if (i >= 0 && i < number)
             {
                 if (++j >= 0 && j <= i)
                 {
                     sb.Append(ch++);
-                    return GeneralReverseABCDWithRecursionWithReturn(n, sb: sb, i: i, j: j, ch: ch);
+                    return GeneralReverseABCDWithRecursionWithReturn(number, sb: sb, i: i, j: j, ch: ch);
                 }
                 else
                 {
@@ -360,12 +366,12 @@ namespace LogicalProgramming
                     {
                         if (check) ch--;
                         sb.Append(--ch);
-                        return GeneralReverseABCDWithRecursionWithReturn(n, sb: sb, i: i, j: j, s: s, ch: ch, check: false);
+                        return GeneralReverseABCDWithRecursionWithReturn(number, sb: sb, i: i, j: j, s: s, ch: ch, check: false);
                     }
                     else
                     {
                         sb.Append("\n");
-                        return GeneralReverseABCDWithRecursionWithReturn(n, sb: sb, i: ++i);
+                        return GeneralReverseABCDWithRecursionWithReturn(number, sb: sb, i: ++i);
                     }
                 }
             }
@@ -420,11 +426,11 @@ namespace LogicalProgramming
             return list.ToArray();
         }
 
-        static long Power(int n, int t)
+        static long Power(int number, int time)
         {
-            if (t == 1) return n;
-            else if (t == 0) return 1;
-            else return n * Power(n, t - 1);
+            if (time == 1) return number;
+            else if (time == 0) return 1;
+            else return number * Power(number, time - 1);
         }
 
         static int[] LeftCircularRotaion(int[] arr)
@@ -473,11 +479,11 @@ namespace LogicalProgramming
             }
         }
 
-        static int NthFibonanci(int n)
+        static int NthFibonanci(int number)
         {
-            if (n == 0 || n == 1) return n;
+            if (number == 0 || number == 1) return number;
             int x = 0, y = 1, z = 1;
-            for (int i = 2; i <= n; i++)
+            for (int i = 2; i <= number; i++)
             {
                 z = x + y;
                 x = y;
@@ -486,16 +492,16 @@ namespace LogicalProgramming
             return z;
         }
 
-        static int NthFibonanciWithRecursion(int n)
+        static int NthFibonanciWithRecursion(int number)
         {
-            if (n == 0 || n == 1) return n;
-            else return NthFibonanciWithRecursion(n - 1) + NthFibonanciWithRecursion(n - 2);
+            if (number == 0 || number == 1) return number;
+            else return NthFibonanciWithRecursion(number - 1) + NthFibonanciWithRecursion(number - 2);
         }
 
-        static void FibonanciUptoN(int n)
+        static void FibonanciUptoN(int number)
         {
             int x = 0, y = 1, z = x + y;
-            for (int i = 0; z < n; i++)
+            for (int i = 0; z < number; i++)
             {
                 Console.WriteLine(z);
                 z = x + y;
@@ -504,20 +510,20 @@ namespace LogicalProgramming
             }
         }
 
-        static void FibonanciUptoNWithRecursion(int n, int x = 0, int y = 1, int z = 1)
+        static void FibonanciUptoNWithRecursion(int number, int x = 0, int y = 1, int z = 1)
         {
-            if (z < n)
+            if (z < number)
             {
                 Console.WriteLine(z);
-                FibonanciUptoNWithRecursion(n, z: z = x + y, x: x = y, y: y = z);
+                FibonanciUptoNWithRecursion(number, z: z = x + y, x: x = y, y: y = z);
             }
         }
 
-        static bool IsPrime(int n)
+        static bool IsPrime(int number)
         {
-            for (int i = 2; i <= n / 2; i++)
+            for (int i = 2; i <= number / 2; i++)
             {
-                if (n % i == 0)
+                if (number % i == 0)
                 {
                     return false;
                 }
@@ -525,30 +531,116 @@ namespace LogicalProgramming
             return true;
         }
 
-        static void PrintPrimeUptoN(int start, int n)
+        static void PrintPrimeUptoN(int start, int end)
         {
-            for (start = start; start <= n; start++) if (IsPrime(start)) Console.WriteLine(start);
+            while (start <= end)
+            {
+                if (IsPrime(start)) Console.WriteLine(start);
+                start++;
+            }
         }
 
-        static bool IsArmstrong(int n)
+        static bool IsArmstrong(int number)
         {
-            int tempn = n, sum = 0, count = n.ToString().Length;
+            int tempn = number, sum = 0, count = number.ToString().Length;
             while (tempn > 0)
             {
                 int temp = tempn % 10;
                 sum += (int)Power(temp, count);
                 tempn = tempn / 10;
             }
-            return sum == n;
+            return sum == number;
         }
 
-        static void ArmstrongUptoN(int start, int n)
+        static void ArmstrongUptoN(int start, int end)
         {
-            while (start <= n)
+            while (start <= end)
             {
                 if (IsArmstrong(start)) Console.WriteLine(start);
                 start++;
             }
+        }
+
+        static int ReversenNumber(int number)
+        {
+            int reminder = 0, reverse = 0;
+            while (number > 0)
+            {
+                reminder = number % 10;
+                reverse = (reverse * 10) + reminder;
+                number = number / 10;
+            }
+            return reverse;
+        }
+
+        static int ReverseNumberWithRecursion(int number, int reminder = 0, int reverse = 0)
+        {
+            if (number > 0)
+            {
+                reminder = number % 10;
+                reverse = (reverse * 10) + reminder;
+                return ReverseNumberWithRecursion(number: number / 10, reminder: reminder, reverse: reverse);
+            }
+            return reverse;
+        }
+
+        static long Factorial(int number)
+        {
+            if (number == 0 || number == 1) return number;
+            int i = number; long Factorial = 1;
+            while (i != 1) Factorial *= i--;
+            return Factorial;
+        }
+
+        static long FactorialWithRecursion(int number, int i = 2, int factorial = 1)
+        {
+            if (number == 0 || number == 1) return number;
+            else if (i <= number)
+            {
+                factorial *= i++;
+                return FactorialWithRecursion(number, i: i, factorial: factorial);
+            }
+            else return factorial;
+        }
+
+        static int SumOfNumber(int number)
+        {
+            int reminder = 0, sum = 0;
+            while (number > 0)
+            {
+                reminder = number % 10;
+                sum += reminder;
+                number = number / 10;
+            }
+            return sum;
+        }
+
+        static int DecimalToBinary(int number)
+        {
+            StringBuilder sb = new StringBuilder();
+            List<int> list = new List<int>();
+            for (int i = 0; number > 0; i++)
+            {
+                list.Add(number % 2);
+                number /= 2;
+            }
+            for (int i = list.Count - 1; i >= 0; i--)
+            {
+                sb.Append(list[i]);
+            }
+            return Int32.Parse(sb.ToString());
+        }
+
+        static int BinaryToDecimal(int number)
+        {
+            int tmp = number, sum = 0;
+            for (int i = 0; i < number.ToString().Length; i++)
+            {
+                var temp = tmp % 10;
+                sum += temp * ((int)Power(2, i));
+                tmp /= 10;
+            }
+            return sum;
         }
     }
 }
