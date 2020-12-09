@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using static System.Console;
 
@@ -9,61 +10,38 @@ namespace LogicalProgramming
     {
         static void Main(string[] args)
         {
-        here:
-            //WriteLine(ReverseDigitWithReturn(123, 2));
-            //ReverseDigitWithRecursion(123, 2);
-            //WriteLine(FindSubstring("abcdefghijklmnopqrstuvwxyz"));
-            //WriteLine(FindSubStringWithRecursion("abcdefghijklmnopqrstuvwxyz"));
-            //WriteLine(RemoveCharacter("abcd", 'a'));
-            //WriteLine(RemoveCharacterOneTime("aaabcd", 'a'));
-            //WriteLine(letCharacterOneTime("aaaaabcd", 'a'));
-            //WriteLine(CheckStringPalindrome("abc"));
-            //WriteLine(CheckStringPalindromeWithRecursion("abcba"));
-            //WriteLine(FindPositions(new int[] { 1, 2, 3, 4, 8, 5, 6, 7, 8, -80 }, -80));
-            //Pyramid(10);
-            //PyramidABCD(10);
-            //PyramidWithRecursion(10);
-            //PyramidReverseABCD(10);
-            //GeneralABCD(10);
-            //GeneralReverseABCD(10);
-            //PyramidWithRecursion(10);
-            //WriteLine(PyramidWithRecursionWithReturn(10));
-            //PyramidReverseABCDWithRecursion(10);
-            //GeneralReverseABCDWithRecursion(10);
-            //WriteLine(GeneralReverseABCDWithRecursionWithReturn(10));
-            //FindAllPermutation("123");
-            //foreach (var item in Split("soham patel pipaliya tulshinhai"))
-            //{
-            //    Console.WriteLine(item);
-            //}
-            //Console.WriteLine(Power(5, 5));
-            //foreach (var item in LeftCircularRotaion(new int[] { 10, 20, 30, 40, 50 }))
-            //{
-            //    Console.WriteLine(item);
-            //}
-            //foreach (var item in RightCircularRotation(new int[] { 10, 20, 30, 40, 50 }))
-            //{
-            //    Console.WriteLine(item);
-            //}
-            //Fibonanci();
-            //FibonanciWithRecursion();
-            //NthFibonanci(10);
-            //NthFibonanciWithRecursion(10);
-            //FibonanciUptoNumber(10000);
-            //FibonanciUptoNumberWithRecursion(10000);
-            //Console.WriteLine(IsPrime(10));
-            //PrintPrimeUptoN(0, 100);
-            //Console.WriteLine(IsArmstrong(8208));
-            //ArmstrongUptoN(1, 10000);
-            //Console.WriteLine(ReversenNumber(123));
-            //Console.WriteLine(ReverseNumberWithRecursion(123));
-            //Console.WriteLine(Factorial(5));
-            //Console.WriteLine(FactorialWithRecursion(5));
-            //System.Console.WriteLine(SumOfNumber(12345));
-            //WriteLine(DecimalToBinary(84));
-            //WriteLine(BinaryToDecimal(1010100));
             ReadLine();
-            goto here;
+        }
+
+        static char FindHighestOccuringChar(string str)
+        {
+            List<int> list = new();
+            int count = 0;
+            for (int i = 0; i < str.Length; i++)
+            {
+                for (int j = i + 1; j < str.Length; j++)
+                {
+                    if (str[i] == str[j]) count++;
+                }
+                list.Add(count);
+                count = 0;
+            }
+            var index = Math.Max(list.IndexOf(list.Max()), 0);
+            return str[index];
+        }
+
+        static char FindLongestConsecutiveChar(string str)
+        {
+            char prev = default, maxChar = default;
+            int count = 1, maxCount = 0; ;
+            foreach (var item in str)
+            {
+                if (prev == item) count++;
+                else count = 1;
+                if (count > maxCount) (maxCount, maxChar) = (count, item);
+                prev = item;
+            }
+            return maxChar;
         }
 
         static void ReverseDigitWithRecursion(int arg, int index, string str = "")

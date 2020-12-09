@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SOHAM\\Desktop\\LogicalProgramming\\LogicalProgramming.csproj",
+      "projectUniqueName": "C:\\Users\\SOHAM\\Desktop\\Git\\LogicalProgramming\\LogicalProgramming.csproj",
       "projectName": "LogicalProgramming",
-      "projectPath": "C:\\Users\\SOHAM\\Desktop\\LogicalProgramming\\LogicalProgramming.csproj",
+      "projectPath": "C:\\Users\\SOHAM\\Desktop\\Git\\LogicalProgramming\\LogicalProgramming.csproj",
       "packagesPath": "C:\\Users\\SOHAM\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SOHAM\\Desktop\\LogicalProgramming\\obj\\",
+      "outputPath": "C:\\Users\\SOHAM\\Desktop\\Git\\LogicalProgramming\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SOHAM\\AppData\\Roaming\\NuGet\\NuGet.Config",
