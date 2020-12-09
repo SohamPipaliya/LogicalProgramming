@@ -26,8 +26,7 @@ namespace LogicalProgramming
                 list.Add(count);
                 count = 0;
             }
-            var index = Math.Max(list.IndexOf(list.Max()), 0);
-            return str[index];
+            return str[list.IndexOf(list.Max())];
         }
 
         static char FindLongestConsecutiveChar(string str)
